@@ -18,6 +18,5 @@ Crafty.scene("main", function() {
 	function myMethod( )
 	{
 		sc['obstacle'] = new Obstacle();
-	  console.log("new obstacle");
 	}
 });

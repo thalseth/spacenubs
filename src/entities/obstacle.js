@@ -15,20 +15,14 @@ Obstacle = BaseEntity.extend({
                 this.destroy();
 
                 if (this.x <= 0 || this.x >= 800) {
-                    this.dX *= -1;
-                    //this.destroy();    
-                }
-                if(this.x == 799)
-                {
-                    console.log("Out of window");
+                    this.dX *= -1;   
                 }
                 this.x += this.dX;
                 this.y += this.dY;
             })
             .onHit('ufo', function () {
-                console.log("hit");
             this.destroy();
-            //this.dX *= -1;
+            console.log("Hit");
         })
         model.set({'entity' : entity });
     }

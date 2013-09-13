@@ -10,8 +10,21 @@ Ufo = BaseEntity.extend({
             .attr({x: ((Crafty.viewport.width/2) - (entity.w/2)), y: 0, z: 300})
             .collision(new Crafty.polygon([21,63],[40,55],[59,52],[71,52],[74,39],[83,24],[102,13],[117,13],[119,13],[136,24],[147,37],[151,51],[174,54],[190,58],[195,62],[200,68],[196,78],[180,85],[148,91],[102,92],[70,91],[46,86],[24,80],[17,68],[18,64]))
             .multiway(model.get('speed'), {UP_ARROW: -90, DOWN_ARROW: 90, RIGHT_ARROW: 0, LEFT_ARROW: 180})
-            .bind('EnterFrame', function(e){
-
+            .bind('EnterFrame', function(){
+                if (this.x >= 600) {
+                    this.x = 599;
+                }
+                if(this.x <= 0)
+                {
+                    this.x = 1;
+                }
+                if (this.y >= 600) {
+                    this.y = 599;
+                }
+                if(this.y <= 0)
+                {
+                    this.y = 1;
+                }
             })
             .bind('Click', function(){
                 
