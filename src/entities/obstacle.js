@@ -23,7 +23,10 @@ Obstacle = BaseEntity.extend({
             })
             .onHit('ufo', function () {
             this.destroy();
-            console.log("Hit");
+            health--;
+            if(health == 0){
+               $('body').append('<div class="blocker"><p>Sheep lifetime: '+Math.round(timer * 100) / 100+' sekunder</p></div>')
+            }
         })
         model.set({'entity' : entity });
     }

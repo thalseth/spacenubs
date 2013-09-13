@@ -1,3 +1,5 @@
+var speed = 250;
+
 Crafty.scene("main", function() {
 
 	var elements = [
@@ -10,15 +12,25 @@ Crafty.scene("main", function() {
 	
 	//when everything is loaded, run the main scene
 	require(elements, function() {
-		infc['timer'] = new Timer();
+		//infc['timer'] = new Timer();
 		//infc['info'] = new Info();
-		infc['points'] = new Points();
+		//infc['points'] = new Points();
 		sc['ufo'] = new Ufo();
 		sc['obstacle'] = new Obstacle();
-		setInterval(myMethod, 500);
+		setInterval(myMethod, speed);
 	});
 	function myMethod( )
 	{
 		sc['obstacle'] = new Obstacle();
 	}
+
+	
+
 });
+var health = 3;
+var timer = 0.0;
+
+setInterval(function(){
+	timer += 0.1;
+	speed -= 100;
+}, 100)
