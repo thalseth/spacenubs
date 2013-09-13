@@ -11,9 +11,9 @@ window.onload = function() {
 	};
     
 	//start Crafty
-	Crafty.init(800, 800);
+	Crafty.init(500, 800);
 	Crafty.canvas.init();
-	Crafty.background("black");
+	Crafty.background("url(web/images/background.png)");
 	
 	require([
 	         "src/sprites.js?v="+version+"",
@@ -22,6 +22,7 @@ window.onload = function() {
 		// Create Sprites
 		var sprites = new Sprites();
 		sprites.create();
+		console.log(sprites);
 
 		// Load config
 		gameContainer['conf'] = new Config({});

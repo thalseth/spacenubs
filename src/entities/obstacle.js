@@ -4,8 +4,9 @@ Obstacle = BaseEntity.extend({
     },
     initialize: function(){
         var model = this;
-        var entity = Crafty.e("2D, Canvas, Color, Collision")
-          .color("red")
+        var entity = Crafty.e("2D, Canvas, Color, Image, Collision")
+          .color("transparent")
+          .image(randomImg())
           .attr({ x: randomNum(600-20), y: 1, w: 20, h: 20, 
             dX: Crafty.math.randomInt(-10, 10), 
             dY: Crafty.math.randomInt(5, 10) })
@@ -14,7 +15,7 @@ Obstacle = BaseEntity.extend({
                 if (this.y <= 0)
                 this.destroy();
 
-                if (this.x <= 0 || this.x >= 800) {
+                if (this.x <= 0 || this.x >= 500) {
                     this.dX *= -1;   
                 }
                 this.x += this.dX;
@@ -32,3 +33,9 @@ function randomNum(num){
     var random =  Math.floor(Math.random()*num);
     return random;
 }  
+
+function randomImg(){
+    var random = Crafty.math.randomInt(1,4);
+
+    return "web/images/planet"+random+".png";
+}

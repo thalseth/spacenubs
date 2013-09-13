@@ -1,13 +1,13 @@
-Info = BaseEntity.extend({
+Points = BaseEntity.extend({
     defaults: {
-        'text' : "Move object with arrows key",
+        'text' : "Points",
     },
     initialize: function(){
         var model = this;
         var entity = Crafty.e("2D, DOM, Text");
 
         entity
-            .attr({x: 50, y: 50, z: 1000, w: 400})
+            .attr({x: 400, y: 50, z: 1000, w: 400})
             .text(model.get('text'))
             .textColor('#FFFFFF')
             .textFont({'size' : '24px', 'family': 'Arial'})

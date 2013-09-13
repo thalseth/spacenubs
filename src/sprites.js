@@ -13,13 +13,20 @@
 Sprites = Backbone.Model.extend({
     defaults: {
         images:{
+             'obstacle' : {
+                'file' : 'web/images/planet1.png',
+                'tile' : 30,
+                'tileh' : 30,
+                'obstacle' : [0, 0]
+            },
             'ufo' : {
-                 'file' : 'web/images/ufo.png',
-                 'tile' : 211,
-                 'tileh' : 117,
+                 'file' : 'web/images/supersheep.png',
+                 'tile' : 50,
+                 'tileh' : 75,
                  'elements': {
-                     'ufo' : [0, 0]
+                 'ufo' : [0, 0]
                  }
+
             }
         }
     },
