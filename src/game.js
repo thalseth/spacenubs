@@ -35,7 +35,7 @@ window.onload = function() {
 			var loadingText = Crafty.e("2D, "+gameContainer.conf.get('renderType')+", Text")
 					.attr({w: 500, h: 20, x: ((Crafty.viewport.width) / 2), y: (Crafty.viewport.height / 2), z: 2})
 					.text('Loading...')
-					.textColor('#000')
+					.textColor('#FFF')
 					.textFont({'size' : '24px', 'family': 'Arial'});
 		
 			// load takes an array of assets and a callback when complete
